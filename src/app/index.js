@@ -1,6 +1,6 @@
 import React from "react";
 import {render} from "react-dom";
-import {Router,Route,browserHistory} from "react-router";
+import {BrowserRouter, Route,Switch} from 'react-router-dom';
 
 import {Root} from "./components/Root";
 import {Home} from "./components/Home";
@@ -11,10 +11,12 @@ class App extends React.Component {
     render(){
       
      return (       
-        <Router history={browserHistory}>
-            <Route path={"user"} component={User}/>
-            <Route path={"home"} component={Home}/>
-        </Router>
+        <BrowserRouter >
+            <Switch>
+                <Route path="/user" component={User}/>
+                <Route path="/home" component={Home}/>
+            </Switch>
+        </BrowserRouter>
      )  ;
     }
 

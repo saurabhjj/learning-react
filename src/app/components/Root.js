@@ -1,6 +1,8 @@
 import React from "react";
 import {Header} from "./Header";
-
+import { Route, Switch } from 'react-router-dom';
+import {Home} from "./Home";
+import {User} from "./User";
 export class Root extends React.Component {
     render(){
         return (
@@ -12,9 +14,13 @@ export class Root extends React.Component {
                 </div>
                 <div className="row">
                     <div className="col-xs-10 col-xs-offset-1">
-                        {this.props.children}
+                       {this.props.children}
                     </div>
                 </div>
+                <Switch>
+                    <Route path="/user" component={User}/>
+                    <Route path="/home" component={Home}/>
+                </Switch>
             </div>
         );
     }

@@ -1,8 +1,10 @@
 import React from "react";
 import {Header} from "./Header";
-import { Route, Switch } from 'react-router-dom';
+import {Route, Switch} from 'react-router-dom';
 import {Home} from "./Home";
 import {User} from "./User";
+
+
 export class Root extends React.Component {
     render(){
         return (
@@ -18,7 +20,8 @@ export class Root extends React.Component {
                     </div>
                 </div>
                 <Switch>
-                    <Route path="/user" component={User}/>
+                    <Route exact path="/" component={Home}/>
+                    <Route path="/user/:id" component={User}/>
                     <Route path="/home" component={Home}/>
                 </Switch>
             </div>
